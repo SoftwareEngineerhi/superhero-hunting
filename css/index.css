@@ -1,0 +1,327 @@
+/* ==========all page style=============== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  
+}
+
+/* body styling */
+body {
+    background-image: url('../assets/spider.jpeg');
+    background-color: rgb(60, 4, 120);
+    font-family: 'Kanit', sans-serif;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+   
+}
+/* flex row for list of hero */
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+/* -------> Navbar <------- */
+
+/* -------> Left Side <-------*/
+.navbar {
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: green;
+    box-shadow: 0px 0px 7px 0px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-shadow: 0px 0px 5px #044af9;
+    font-size: 30px;
+    padding: 0 20px;
+    
+}
+/* navbar name icon button */
+.navbar-brand {
+    align-items: center;
+    gap: 10px;
+}
+/* a tag link */
+.navbar-brand a{
+    text-decoration: none;
+    color:yellow;
+}
+
+/* -------> Right Side <-------*/
+/* logo move like super hero */
+@keyframes heroAnimation {
+    0% {
+        transform: translateY(0) rotate(45deg); /* Start position */
+    }
+    100% {
+        transform: translateY(1) rotate(45deg); /* End position */
+    }
+}
+/* logo style */
+.logo {
+    width: 15%;
+    /* logo move like super hero */
+    animation: heroAnimation 2s infinite alternate; /* Use the heroAnimation keyframes */
+
+}
+
+/* favorite button in navbar */
+.favAndTheme-btn {
+    align-items: center;
+    gap: 10px;
+}
+/* go to favorite or home link */
+.link-to-different-page{
+    justify-content: center;
+    text-decoration: none;
+}
+/* button style for favorite */
+.btn {
+    border: none;
+    outline: none;
+    padding: 10px;
+    background-color: red;
+    border-radius: 3px;
+    color: #fff;
+    height: 40px;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+/* favorite button */
+.fav-btn {
+    font-size: 16px;
+    width: 140px;
+}
+/* icon style */
+.fav-icon {
+    color: 1fff;
+}
+/* image for favorite and home */
+.bg-right-side-img {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    height: 90%;
+    filter: blur(2px);
+}
+
+/* -------> Search Bar and Results <------- */
+
+.search-bar-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
+/* search bar div */
+.search-icon-container {
+    background:yellow;
+    box-shadow: 0px 0px 7px 0px;
+    color: #5f0202;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-top: 50px;
+    border-radius: 10px 0 0 10px;
+}
+/* width search bar */
+.searchBar-items {
+    min-width: 40%;
+}
+/* search bar style */
+#search-bar {
+    background: var(--navbar-background-color);
+    color: white;
+    min-width: 550px;
+    height: 50px;
+    font-size: 20px;
+    border: none;
+    border-left:5px solid red; 
+    box-shadow: 0px 0px 7px 0px;
+    border-radius: 0 10px 10px 0;
+    outline: none;
+    padding: 10px;
+    letter-spacing: 2px;
+    margin-top: 50px;
+    z-index: 1;
+    background-color: rgb(3, 59, 59);
+}
+/* input tag for search  */
+input::placeholder {
+    color: #fff;
+    font-size: 20px;
+}
+/* search img information */
+.img-info {
+    gap: 10px;
+}
+
+.img-info img {
+    width: 65px;
+}
+/* search result */
+#search-results {
+    min-width: 435px;
+    margin-top: 30px;
+    list-style: none;
+    z-index: 2;
+    backdrop-filter: blur(4px);
+}
+/* search result list */
+#search-results li {
+    background: rgba(56, 56, 56, 0.6);
+    height: 100px;
+    color: white;
+    width: 100%;
+}
+/* alerternate color for list style  */
+#search-results li:nth-child(odd) {
+    background-color: rgb(44, 124, 44);
+  }
+ #search-results li:nth-child(even) {
+    background-color: rgb(59, 27, 243);
+  }
+#search-results li .hero-name {
+    transition: all 0.2s ease;
+    cursor: pointer;
+
+}
+/* hover over style */
+#search-results li:hover .hero-name {
+    color: yellow;
+}
+/* search result style */
+.single-search-result {
+    padding: 0 5px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid black;
+    width: inherit;
+}
+/* character information */
+.character-info {
+    text-decoration: none;
+    color: white;
+}
+/* hero information div style */
+.hero-info {
+    display: flex;
+    align-items: center;
+}
+/* font style hero name */
+.hero-name {
+   
+    font-size: 26px;
+}
+/* button style */
+.buttons {
+    gap: 5px;
+    padding: 0 10px;
+}
+
+/* -------> Toast for notification <------- */
+/* toast by for favorite added removed */
+.fav-toast,
+.remove-toast {
+    position: absolute;
+    bottom: 100px;
+    font-size: 24px;
+    width: 350px;
+    color: white;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    z-index: 2;
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 5px;
+}
+/* toast visiblity */
+.fav-toast[data-visiblity="show"],
+.remove-toast[data-visiblity="show"] {
+    display: block;
+}
+/* hide toast */
+.fav-toast[data-visiblity="hide"],
+.remove-toast[data-visiblity="hide"] {
+    display: none;
+}
+/* color for fav toast */
+.fav-toast {
+    background-color: rgb(10, 10, 207);
+    box-shadow: 0px 0px 3px 3px white;
+    
+}
+/* color for removed toast */
+.remove-toast {
+    background-color:red;
+    box-shadow: 0px 0px 3px 3px white;
+}
+/* color for icon */
+.fa-heart-circle-minus {
+    color: rgb(243, 243, 35);
+   
+}
+/* animation for fav icon popup */
+    @keyframes popup {
+        0% {
+            transform: scale(0.1);
+          }
+        75% {
+          transform: scale(0.5);
+        }
+        100% {
+          transform: scaleX(1);
+        }
+      }
+      /* fav icon style with animation */
+      .fav-icon{
+        color: yellow;
+        animation-name: popup;
+      animation-timing-function: ease-in-out;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+        }
+        
+/* -------> Media Queries for different screen sizes <------- */
+
+@media screen and (max-width: 576px) {
+
+    #search-bar {
+         min-width: 435px;
+    }
+
+    .navbar {
+         flex-direction: column;
+         gap: 10px;
+         padding: 10px 0;
+    }
+
+    .navbar-brand {
+         display: flex;
+         flex-direction: column;
+
+    }
+
+    .navbar-brand span {
+         margin-top: -35px;
+    }
+/* logo styling */
+    .logo {
+         width: 25%;
+         min-width: 45px;
+    }
+}
